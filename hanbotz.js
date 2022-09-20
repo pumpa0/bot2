@@ -1680,9 +1680,6 @@ if (isBanChat) return reply(mess.banChat)
                 if (!m.quoted) return reply(`reply pesan bot`)
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) reply(`pesan tersebut bukan dari bot`)
-                if (!/image/.test(mime)) {
-                	return replay(mess.admin)
-                } 
                 hanbotz.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
